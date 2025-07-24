@@ -3,7 +3,7 @@ import '../styles/global.css';
 const pageTitle = "research";
 ---
 
-<nav class = "vertical_home_navs">
+<nav class = "top_navs">
 	<a href="/">home</a>
 	<a href="/research/">research</a>
 	<a href="/traditional art/">traditional art</a>
@@ -20,6 +20,48 @@ const pageTitle = "research";
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
     </head>
+
+    <style>
+
+        /* NAVIGATION BUTTONS */
+        .top_navs {
+            /* placing navigation buttons where desired */
+            position: absolute;
+            display: flex;
+            flex-direction: row; 
+            top: 4rem; 
+
+            /* spacing between buttons and of the lettering */
+            gap: 3rem;  
+            letter-spacing: 4.5px;   
+            
+            /* to prevent buttons from being underlined or changing color */
+            text-decoration: none;
+        }
+
+        .top_navs a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        body { 
+            margin: 0;
+            width: 100%;
+            max-width: none;
+            padding: 4rem 4rem;
+        }
+
+        .home_image {
+            position: absolute;
+            display: block;
+            top: 7rem;
+            left: 27rem;
+            right: auto; 
+        }
+
+    </style>
+ 
 
     <body>
         <h1>{pageTitle}</h1>
