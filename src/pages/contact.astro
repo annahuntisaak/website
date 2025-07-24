@@ -1,5 +1,10 @@
 ---
 import '../styles/global.css';
+
+import { Image } from 'astro:assets';
+import instagram from '../assets/contact/insta_b.png';
+import linkedin from '../assets/contact/linked_b.png';
+
 const pageTitle = "contact";
 ---
 
@@ -45,13 +50,19 @@ const pageTitle = "contact";
             color: rgb(175, 159, 148);
         }
 
+        a {
+            text-decoration: none;    
+        }
+
     </style>
 
     <body>
-        I'd love to hear from you!  Please feel free to message me at either of the below email addresses
+        <p>
+            I'd love to hear from you!  Please feel free to message me at either of the below email addresses
         and to connect via social media platforms.
+        </p>
 
-        <br><br>
+        <br>
         
         <h1>
             academic and professional
@@ -70,7 +81,17 @@ const pageTitle = "contact";
             annahuntisaak@gmail.com <br> For all other subject matter.
         </p>
 
-        
+        <br><br><br><br>
+
+        <a href="https://www.linkedin.com/in/anna-rose-hunt-isaak">
+            <Image src={linkedin} alt="linkedin logo" class="image" height={60} quality={100}/>
+        </a>
+
+        &nbsp;
+
+        <a href="https://www.instagram.com/annameigui/">
+            <Image src={instagram} alt="instagram logo" class="image" height={60} quality={100}/>
+        </a>
 
     </body>
 
