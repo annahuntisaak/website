@@ -6,9 +6,9 @@ import driveway from '../assets/traditional/driveway.jpeg'
 import hand from '../assets/traditional/hand.jpeg';
 import les from '../assets/traditional/les.jpeg';
 import line from '../assets/traditional/line.jpeg';
-import maine from '../assets/traditional/hand.jpg';
+import maine from '../assets/traditional/maine.jpg';
 import pools from '../assets/traditional/pools.jpg';
-import still from '../assets/traditional/still.jpg';
+import still from '../assets/traditional/still.jpeg';
 
 const pageTitle = "traditional art";
 ---
@@ -58,11 +58,24 @@ const pageTitle = "traditional art";
 
 		/* DISPLAYING IMAGES */
 		.gallery {
+			/*
 			display: grid;
 			gap: 4rem;
+			*/
+
+			padding: 0rem 3rem;
+			max-width: 1200px;
+			margin: 0 auto;
+		
 		}
 
-
+		.row {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 3rem;
+			flex-wrap: nowrap;
+		}
 
 
 		/* IMAGE HOVERING */
@@ -100,6 +113,7 @@ const pageTitle = "traditional art";
 			color: inherit;
 			font-size: inherit;
 			padding: 16px 32px;
+			text-align: center;
 		}
 
 	</style>
@@ -107,30 +121,73 @@ const pageTitle = "traditional art";
 
 	<body>
 		<div class="gallery">
-			
-			<div class="container">
-				<Image src={les} alt="leslie" class="image" width={780}/>
-				<div class="middle">
-				  <div class="text">cotton linter, acrylic</div>
+
+			<div class="row">
+				<div class="container">
+					<Image src={les} alt="leslie" class="image" width={900}/>
+					<div class="middle">
+					  <div class="text">cotton linter<br>acrylic</div>
+					</div>
 				</div>
-			  </div>
+			</div>
 			
-			<div class="container">
-				<Image src={line} alt="line" class="image" width={780}/>
-				<div class="middle">
-				  <div class="text">gouache, colored pencil, chalk pastel</div>
-				</div>
-			  </div>
-			
-			<div class="container">
-				<Image src={hand} alt="hand" class="image" height={800}/>
-				<div class="middle">
-				  <div class="text">gouache, colored pencil</div>
-				</div>
-			  </div>
+
+			<div class="row">
+				<div class="container">
+					<Image src={line} alt="line" class="image" width={900}/>
+					<div class="middle">
+						<div class="text">gouache<br>colored pencil<br>chalk pastel</div>
+					</div>
+				</div>	
+			</div>
+
+
+			<div class="row">
+				<div class="container">
+					<Image src={driveway} alt="front driveway" class="image" height={382}/>
+					<div class="middle">
+						<div class="text">chalk pastel<br>gouache</div>
+					</div>
+				</div>	
+
+				<div class="container">
+					<Image src={pools} alt="philly litho print" class="image" height={382}/>
+					<div class="middle">
+						<div class="text">lithographic ink</div>
+					</div>
+				</div>	
+			</div>
+
+
+			<div class="row">
+				<div class="container">
+					<Image src={hand} alt="hand" class="image" width={900}/>
+					<div class="middle">
+						<div class="text">colored pencil<br>gouache</div>
+					</div>
+				</div>	
+			</div>
+
+
+			<div class="row">
+				<div class="container">
+					<Image src={still} alt="still life" class="image" height={575}/>
+					<div class="middle">
+						<div class="text">chalk pastel</div>
+					</div>
+				</div>	
+
+				<div class="container">
+					<Image src={maine} alt="maine stamps" class="image" height={575}/>
+					<div class="middle">
+						<div class="text">lioncuts<br>acrylic</div>
+					</div>
+				</div>	
+
+
+			</div>
 
 		</div>
-
 
 	</body>
 
