@@ -1,0 +1,32 @@
+html {
+    background-color: rgb(255, 246, 242);
+    font-family: monospace;
+    /* font-family: Didiot, serif; */
+  }
+  
+body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100ch;
+    padding: 4rem 1rem;
+    line-height: 0.5;
+
+    color: rgb(81, 56, 46);
+    letter-spacing: 1px;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+h1 {
+    color: rgb(35, 16, 3);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+p {
+    color: rgb(81, 56, 46);
+    font-size: 15px;
+    font-weight: normal;
+}

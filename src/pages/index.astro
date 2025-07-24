@@ -1,11 +1,18 @@
 ---
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import homeImg from '../assets/home.jpg';
+import name from '../assets/name.png';
 const pageTitle = "anna rose hunt-isaak";
 ---
 
-<a href="/">home</a>
-<a href="/about/">about</a>
-<a href="/research/">research</a>
-<a href="/art/">art</a>
+<nav class = "vertical_home_navs">
+	<a href="/research/">research</a>
+	<a href="/traditional art/">traditional art</a>
+	<a href="/photography/">photography</a>
+	<a href="/contact/">contact</a>
+</nav>
+
 
 <html lang="en">
 	<head>
@@ -16,19 +23,86 @@ const pageTitle = "anna rose hunt-isaak";
 		<title>{pageTitle}</title>
 
 		<style>
-			h1 {
-				color: burlywood;
-				font-size: 25px;
+
+			/* NAVIGATION BUTTONS */
+			.vertical_home_navs {
+				/* placing navigation buttons where desired */
+				position: absolute;
+				display: flex;
+  				flex-direction: column; 
+				top: 30rem; 
+				left: 6rem;
+
+				/* spacing between buttons and of the lettering */
+  				gap: 3rem;  
+				letter-spacing: 4.5px;   
+				
+				/* to prevent buttons from being underlined or changing color */
+				text-decoration: none;
 			}
 
-			p {
-				color: black;
-				font-size: 15px;
+			.vertical_home_navs a{
+				text-decoration: none;
+				color: inherit;
 			}
-		  </style>
+
+
+			body { 
+				margin: 0;
+				width: 100%;
+				max-width: none;
+				padding: 4rem 4rem;
+			}
+
+			.home_image {
+				position: absolute;
+				display: block;
+				top: 7rem;
+				left: 27rem;
+				right: auto; 
+			}
+
+			.name_image {
+				display: block;
+				margin-top: 0.5rem;
+				margin-left: 0rem;
+			}
+
+			.home_text {
+				line-height: 1.5;
+				width: 350px; 
+				position: absolute;
+				top: 7rem;  
+				left: 81rem;
+				right: 6rem;                                   
+			}
+
+		</style>
 	</head>
 
 	<body>
+
+		<Image
+			src = {name}
+			alt = "name logo"
+			class = "name_image"
+			height = {230} 
+			quality={100}
+		/>
+		<Image
+			src = {homeImg}
+			alt = "me in Portland"
+			class = "home_image"
+			height = {600} 
+			quality={100}
+		/>
+
+		<div class = "home_text">
+			I'm currently in my final year as an undergraduate at McGill University, pursuing my BASc in Cognitive Science 
+			with a focus on neuroscience and computer science.  
+		</div>
+
+		<!--
 		<h1>{pageTitle}</h1>
 
 		<p> 
@@ -38,6 +112,7 @@ const pageTitle = "anna rose hunt-isaak";
 		<p>
 			In my free time, I enjoy baking and reading
         </p>
+		-->
 
 	</body>
 </html>
