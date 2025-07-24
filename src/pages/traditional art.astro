@@ -1,9 +1,19 @@
 ---
 import '../styles/global.css';
+
+import { Image } from 'astro:assets';
+import driveway from '..~/assets/traditional/driveway.jpeg'
+import hand from '../assets/traditional/hand.jpeg';
+import les from '../assets/traditional/les.jpeg';
+import line from '../assets/traditional/line.jpeg';
+import maine from '../assets/traditional/hand.jpg';
+import pools from '../assets/traditional/pools.jpg';
+import still from '../assets/traditional/still.jpg';
+
 const pageTitle = "traditional art";
 ---
 
-<nav class = "vertical_home_navs">
+<nav class = "top_navs">
 	<a href="/">home</a>
 	<a href="/research/">research</a>
 	<a href="/traditional art/">traditional art</a>
@@ -20,8 +30,106 @@ const pageTitle = "traditional art";
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
+
+	<style>
+
+        /* NAVIGATION BUTTONS */
+        .top_navs {
+            /* placing navigation buttons where desired */
+            position: absolute;
+            display: flex;
+            flex-direction: row; 
+            top: 5rem; 
+
+            /* spacing between buttons and of the lettering */
+            font-size: 12px;
+            gap: 5rem;  
+            letter-spacing: 4.5px;   
+            
+            /* to prevent buttons from being underlined or changing color */
+            text-decoration: none;
+        }
+
+        .top_navs a{
+            text-decoration: none;
+            color: rgb(175, 159, 148);
+		}
+
+
+		/* IMAGE HOVERING */
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 4rem;
+			justify-items: center;
+		}
+
+		.container {
+			position: relative;
+			display: inline-block;
+		}
+
+		.image {
+			opacity: 1;
+			display: block;
+			transition: .5s ease;
+			backface-visibility: hidden;
+		}
+
+		.middle {
+			transition: .5s ease;
+			opacity: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%)
+		}
+
+		.container:hover .image {
+			opacity: 0.3;
+		}
+
+		.container:hover .middle {
+			opacity: 1;
+		}
+
+		.text {
+			color: inherit;
+			font-size: inherit;
+			padding: 16px 32px;
+		}
+
+	</style>
+
+
 	<body>
-		<h1>{pageTitle}</h1>
+		<div class="gallery">
+			
+			<div class="container">
+				<Image src={les} alt="leslie" class="image" width={780}/>
+				<div class="middle">
+				  <div class="text">cotton linter, acrylic</div>
+				</div>
+			  </div>
+			
+			<div class="container">
+				<Image src={line} alt="line" class="image" width={780}/>
+				<div class="middle">
+				  <div class="text">gouache, colored pencil, chalk pastel</div>
+				</div>
+			  </div>
+			
+			<div class="container">
+				<Image src={hand} alt="hand" class="image" height={800}/>
+				<div class="middle">
+				  <div class="text">gouache, colored pencil</div>
+				</div>
+			  </div>
+
+		</div>
+
 
 	</body>
+
 </html>
