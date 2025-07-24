@@ -1,5 +1,44 @@
 ---
 import '../styles/global.css';
+
+import { Image } from 'astro:assets';
+import annex from '../assets/film/annex.jpg';
+import beach from '../assets/film/beach.jpg';
+import bench from '../assets/film/bench.jpg';
+import bikes from '../assets/film/bikes.jpg';
+import cat from '../assets/film/cat.jpg';
+import dinner from '../assets/film/dinner.jpg';
+import golden from '../assets/film/golden.jpg';
+import grammy from '../assets/film/grammy.jpg';
+import hotdog from '../assets/film/hotdog.jpg';
+import house from '../assets/film/house.jpg';
+import kitchen from '../assets/film/kitchen.jpg';
+import leaves from '../assets/film/leaves.jpg';
+import lightpost from '../assets/film/lightpost.jpg';
+import market from '../assets/film/market.jpg';
+import mountain from '../assets/film/mountain.jpg';
+import bedroom from '../assets/film/mtl_night.jpg';
+import md from '../assets/film/museum_dark.jpg';
+import ml from '../assets/film/museum_light.jpg';
+import dorm from '../assets/film/nc_dorm.jpg';
+import stairs from '../assets/film/noah_stairs.jpg';
+import office from '../assets/film/office.jpg';
+import dukeonetree from '../assets/film/one_tree.jpg';
+import pond from '../assets/film/pond.jpg';
+import rocks from '../assets/film/rocks.jpg';
+import sink from '../assets/film/sink.jpg';
+import street from '../assets/film/street.jpg';
+import sunset from '../assets/film/sunset.jpg';
+import tea from '../assets/film/tea.jpg';
+import tofu from '../assets/film/tofu.jpg';
+import treewater from '../assets/film/tree_water.jpg';
+import duketrees from '../assets/film/trees.jpg';
+import trinkets from '../assets/film/trinkets.jpg';
+import village from '../assets/film/village.jpg';
+import water from '../assets/film/water.jpg';
+import wedding from '../assets/film/wedding.jpg';
+import zoe from '../assets/film/zoe.jpg';
+
 const pageTitle = "photography";
 ---
 
@@ -45,6 +84,139 @@ const pageTitle = "photography";
             color: rgb(175, 159, 148);
         }
 
+		/* CHANGING STYLE FOR THE IMAGES SO THEY FIT ON WHOLE SCREEN */
+
+		/*
+		.full_gallery {
+			
+			position: relative;
+			left: 50%;
+			right: 50%;
+			margin-left: -50vw;
+			margin-right: -50vw;
+			width: 100vw;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+
+			gap: 1rem; 
+			padding: 0rem 4rem;
+		}
+		*/
+
+		.full_gallery {
+			padding: 0rem 3rem;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		.row {
+			display: flex;
+			justify-content: center;
+			gap: 1rem;
+			margin-bottom: 1rem;
+			flex-wrap: nowrap;
+		}
+
     </style>
-	
+
+
+	<body>
+		<div class="full_gallery">
+
+			<div class="row">
+				<Image src = {lightpost} alt = "poster" class = "image" height = {320} quality={100} />
+				<Image src = {hotdog} alt = "poster" class = "image" height = {320} quality={100} />
+				<Image src = {leaves} alt = "poster" class = "image" height = {320} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {annex} alt = "poster" class = "image" height = {484} quality={100} />
+				<Image src = {trinkets} alt = "poster" class = "image" height = {484} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {grammy} alt = "poster" class = "image" height = {1060} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {house} alt = "poster" class = "image" height = {484} quality={100} />
+				<Image src = {bedroom} alt = "poster" class = "image" height = {484} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {dinner} alt = "poster" class = "image" height = {988} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {water} alt = "poster" class = "image" height = {321} quality={100} />
+				<Image src = {wedding} alt = "poster" class = "image" height = {321} quality={100} />
+				<Image src = {stairs} alt = "poster" class = "image" height = {321} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {dukeonetree} alt = "poster" class = "image" height = {494} quality={100} />
+				<Image src = {pond} alt = "poster" class = "image" height = {494} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {zoe} alt = "poster" class = "image" height = {978} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {md} alt = "poster" class = "image" height = {484} quality={100} />
+				<Image src = {ml} alt = "poster" class = "image" height = {484} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {sink} alt = "poster" class = "image" height = {314} quality={100} />
+				<Image src = {market} alt = "poster" class = "image" height = {314} quality={100} />
+				<Image src = {tofu} alt = "poster" class = "image" height = {314} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {duketrees} alt = "poster" class = "image" height = {980} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {rocks} alt = "poster" class = "image" height = {485} quality={100} />
+				<Image src = {kitchen} alt = "poster" class = "image" height = {485} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {village} alt = "poster" class = "image" height = {326} quality={100} />
+				<Image src = {bench} alt = "poster" class = "image" height = {326} quality={100} />
+				<Image src = {dorm} alt = "poster" class = "image" height = {326} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {office} alt = "poster" class = "image" height = {458} quality={100} />
+				<Image src = {cat} alt = "poster" class = "image" height = {458} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {treewater} alt = "poster" class = "image" height = {980} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {golden} alt = "poster" class = "image" height = {460} quality={100} />
+				<Image src = {street} alt = "poster" class = "image" height = {460} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {bikes} alt = "poster" class = "image" height = {978} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {beach} alt = "poster" class = "image" height = {320} quality={100} />
+				<Image src = {tea} alt = "poster" class = "image" height = {320} quality={100} />
+				<Image src = {sunset} alt = "poster" class = "image" height = {320} quality={100} />
+			</div>
+
+			<div class="row">
+				<Image src = {mountain} alt = "poster" class = "image" height = {942} quality={100} />
+			</div>
+
+		</div>
+	</body>
+
 </html>
