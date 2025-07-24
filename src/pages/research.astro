@@ -1,5 +1,10 @@
 ---
 import '../styles/global.css';
+
+import { Image } from 'astro:assets';
+import first from '../assets/first.jpg';
+import poster from '../assets/poster.jpg';
+
 const pageTitle = "research";
 ---
 
@@ -50,6 +55,10 @@ const pageTitle = "research";
             color: rgb(175, 159, 148);           
         }
 
+        .image{
+            margin-right: 1.1rem;
+        }
+
 
     </style>
  
@@ -57,10 +66,13 @@ const pageTitle = "research";
     <body>
 
         <p>
-            I've had the opportunity to explore a
+            I've had the opportunity to explore a variety of research 
+            <br>
+            Download my
+            <a href="../public/pub_assets/cv.pdf" target = "_blank">CV</a>!
         </p>
 
-        <br>
+        <br><br>
 
         <h1>m2b3 lab</h1>
         <p>
@@ -70,10 +82,37 @@ const pageTitle = "research";
             <a href = "https://m2b3.github.io/">m2b3 website</a>
         </p>
 
-        <br>
+
+        <br><br>
+
 
         <h1>the crook lab</h1>
+        <p>
+            Worked closely with 
+        </p>
 
+        <br>
+
+        <a href="../public/pub_assets/presentation.pdf" target="_blank">
+            <Image
+			src = {first}
+			alt = "first slide of PDF"
+			class = "image"
+			height = {235} 
+			quality={100}
+		    />
+        </a>
+
+        <a href="../public/pub_assets/poster.jpg" target="_blank">
+            <Image
+			src = {poster}
+			alt = "poster"
+			class = "image"
+			height = {235} 
+			quality={100}
+		    />
+        </a>
+        
     </body>
 
 </html>

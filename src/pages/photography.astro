@@ -3,7 +3,7 @@ import '../styles/global.css';
 const pageTitle = "photography";
 ---
 
-<nav class = "vertical_home_navs">
+<nav class = "top_navs">
 	<a href="/">home</a>
 	<a href="/research/">research</a>
 	<a href="/traditional art/">traditional art</a>
@@ -12,16 +12,39 @@ const pageTitle = "photography";
 </nav>
 
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
+<html lang = "en"> 
+    <head>
+        <meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<h1>{pageTitle}</h1>
+    </head>
 
-	</body>
+    <style>
+
+        /* NAVIGATION BUTTONS */
+        .top_navs {
+            /* placing navigation buttons where desired */
+            position: absolute;
+            display: flex;
+            flex-direction: row; 
+            top: 5rem; 
+
+            /* spacing between buttons and of the lettering */
+            font-size: 12px;
+            gap: 5rem;  
+            letter-spacing: 4.5px;   
+            
+            /* to prevent buttons from being underlined or changing color */
+            text-decoration: none;
+        }
+
+        .top_navs a{
+            text-decoration: none;
+            color: rgb(175, 159, 148);
+        }
+
+    </style>
+	
 </html>

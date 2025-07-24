@@ -3,10 +3,75 @@ import '../styles/global.css';
 const pageTitle = "contact";
 ---
 
-<nav class = "vertical_home_navs">
+<nav class = "top_navs">
 	<a href="/">home</a>
 	<a href="/research/">research</a>
 	<a href="/traditional art/">traditional art</a>
 	<a href="/photography/">photography</a>
 	<a href="/contact/">contact</a>
 </nav>
+
+
+<html lang = "en"> 
+    <head>
+        <meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+    </head>
+
+    <style>
+
+        /* NAVIGATION BUTTONS */
+        .top_navs {
+            /* placing navigation buttons where desired */
+            position: absolute;
+            display: flex;
+            flex-direction: row; 
+            top: 5rem; 
+
+            /* spacing between buttons and of the lettering */
+            font-size: 12px;
+            gap: 5rem;  
+            letter-spacing: 4.5px;   
+            
+            /* to prevent buttons from being underlined or changing color */
+            text-decoration: none;
+        }
+
+        .top_navs a{
+            text-decoration: none;
+            color: rgb(175, 159, 148);
+        }
+
+    </style>
+
+    <body>
+        I'd love to hear from you!  Please feel free to message me at either of the below email addresses
+        and to connect via social media platforms.
+
+        <br><br>
+        
+        <h1>
+            academic and professional
+        </h1>
+        <p>
+            anna.hunt-isaak@mail.mcgill.ca <br> For discussions regarding my research, body of work, and 
+            any academic or professional opportunities.
+        </p>
+
+        <br>
+
+        <h1>
+            personal
+        </h1>
+        <p>
+            annahuntisaak@gmail.com <br> For all other subject matter.
+        </p>
+
+        
+
+    </body>
+
+</html>
