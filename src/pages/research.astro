@@ -4,6 +4,7 @@ import '../styles/global.css';
 import { Image } from 'astro:assets';
 import first from '../assets/research/first.jpg';
 import poster from '../assets/research/poster.jpg';
+import eyelink from '../assets/research/eyelink.jpg';
 
 const pageTitle = "research";
 ---
@@ -45,7 +46,7 @@ const pageTitle = "research";
             text-decoration: none;
         }
 
-        .top_navs a{
+        .top_navs a {
             text-decoration: none;
             color: rgb(175, 159, 148);
         }
@@ -55,7 +56,23 @@ const pageTitle = "research";
             color: rgb(175, 159, 148);           
         }
 
-        .image{
+
+        .m2b3 {
+            display: flex;
+            align-items: flex-start;  
+            gap: 3rem;                
+        }
+
+        .m2b3_img {
+            margin-top: 4rem;
+        }
+
+        .text {
+            flex:1;
+        }
+
+
+        .crookimage {
             margin-right: 1.1rem;
         }
 
@@ -66,29 +83,43 @@ const pageTitle = "research";
     <body>
 
         <p>
-            I've had the opportunity to explore a variety of research 
-            <br>
-            Download my
-            <a href="/pub_assets/cv.pdf" target = "_blank">CV</a>!
-        </p>
-
-        <br><br>
-
-        <h1>m2b3 lab</h1>
-        <p>
-            I'm currently completing my honors research in the mind, machines, brain, body, behavior (m2b3) Lab under the supervision of
-            Dr. Krishna.  Utilizing psychophysics experiments , we are investigating the 
+            I've had the opportunity to explore several areas of research dedicated to better understanding the nature of various 
+            cognitive processes and developing methods to better address human/public health concerns.  These experiences
+            helped solidify my interest in .
             <br><br>
-            <a href = "https://m2b3.github.io/">m2b3 website</a>
+            Download my <a href="/pub_assets/cv.pdf" target = "_blank">CV</a> to see an overview of my work experience and credentials.
         </p>
 
+        <br>
 
-        <br><br>
+        <div class="m2b3">
+            <div class="text">
+
+                <h1>m2b3 lab</h1>
+
+                <p>
+                    I'm currently completing my honors research in the Mind, Machines, Brain, Body, and Behavior (m2b3) Lab under the 
+                    supervision of Dr. Krishna.  Through psychophysics experiments which involve eye tracking during visual search tasks, 
+                    we investigate evidence of trans-saccadic information transfer and the mechanisms underlying choice.  
+                    In time, we aim to develop a novel model of decision making capable of explaining these observed phenomena.
+                    <br><br>
+                    <a href = "https://m2b3.github.io/">m2b3 website</a>
+                </p>
+    
+            </div>
+            <Image src={eyelink} alt="eyelink" class="m2b3_img" height={300} quality={100}/>
+        </div>
+
+
+        <br>
 
 
         <h1>the crook lab</h1>
         <p>
-            Worked closely with 
+            I contributed to an ongoing project 
+            explored genome editing in Enterobacter ludwigii with the goal of 
+            <br><br>
+            <a href="https://github.com/annahuntisaak/ncsu_2024.git">Pipeline</a>
         </p>
 
         <br>
@@ -97,7 +128,7 @@ const pageTitle = "research";
             <Image
 			src = {first}
 			alt = "first slide of PDF"
-			class = "image"
+			class = "crookimage"
 			height = {235} 
 			quality={100}
 		    />
@@ -107,7 +138,7 @@ const pageTitle = "research";
             <Image
 			src = {poster}
 			alt = "poster"
-			class = "image"
+			class = "crookimage"
 			height = {235} 
 			quality={100}
 		    />
