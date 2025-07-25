@@ -13,7 +13,7 @@ import still from '../assets/traditional/still.jpeg';
 const pageTitle = "traditional art";
 ---
 
-<nav class = "top_navs">
+<nav class="nav-horizontal">
 	<a href="/">home</a>
 	<a href="/research/">research</a>
 	<a href="/traditional art/">traditional art</a>
@@ -32,156 +32,122 @@ const pageTitle = "traditional art";
 	</head>
 
 	<style>
-
-        /* NAVIGATION BUTTONS */
-        .top_navs {
-            /* placing navigation buttons where desired */
-            position: absolute;
-            display: flex;
-            flex-direction: row; 
-            top: 5rem; 
-
-            /* spacing between buttons and of the lettering */
-            font-size: 12px;
-            gap: 5rem;  
-            letter-spacing: 4.5px;   
-            
-            /* to prevent buttons from being underlined or changing color */
-            text-decoration: none;
-        }
-
-        .top_navs a{
-            text-decoration: none;
-            color: rgb(175, 159, 148);
+		/* Use Pico's responsive layout */
+		body {
+			padding-top: 4rem;
 		}
 
-
-		/* DISPLAYING IMAGES */
 		.gallery {
-			/*
-			display: grid;
-			gap: 4rem;
-			*/
-
-			padding: 0rem 3rem;
 			max-width: 1200px;
 			margin: 0 auto;
-		
 		}
 
-		.row {
-			display: flex;
-			justify-content: center;
-			gap: 2rem;
-			margin-bottom: 3rem;
-			flex-wrap: nowrap;
+		/* Responsive grid layouts */
+		.gallery-grid {
+			margin-bottom: 2rem;
 		}
 
-
-		/* IMAGE HOVERING */
-		.container {
+		/* Traditional art hover effects */
+		.hover-container {
 			position: relative;
 			display: inline-block;
+			width: 100%;
 		}
 
-		.image {
-			opacity: 1;
+		.hover-container img {
+			width: 100%;
+			height: auto;
 			display: block;
-			transition: .5s ease;
-			backface-visibility: hidden;
+			transition: opacity 0.5s ease;
 		}
 
-		.middle {
-			transition: .5s ease;
-			opacity: 0;
+		.hover-text {
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-			-ms-transform: translate(-50%, -50%)
+			opacity: 0;
+			transition: opacity 0.5s ease;
+			text-align: center;
+			padding: 16px 32px;
+			white-space: nowrap;
+			color: rgb(68, 33, 9) !important;
+			font-weight: 600;
+			background: rgba(255, 246, 242, 0.9);
+			border-radius: 4px;
 		}
 
-		.container:hover .image {
+		.hover-container:hover img {
 			opacity: 0.3;
 		}
 
-		.container:hover .middle {
+		.hover-container:hover .hover-text {
 			opacity: 1;
 		}
 
-		.text {
-			color: inherit;
-			font-size: inherit;
-			padding: 16px 32px;
-			text-align: center;
+		/* Mobile adjustments */
+		@media (max-width: 768px) {
+			.gallery-row-2 {
+				grid-template-columns: 1fr !important;
+			}
+			
+			.hover-text {
+				font-size: 0.9rem;
+				padding: 8px 16px;
+			}
 		}
-
 	</style>
 
 
 	<body>
-		<div class="gallery">
+		<div class="container gallery">
 
-			<div class="row">
-				<div class="container">
-					<Image src={les} alt="leslie" class="image" width={900}/>
-					<div class="middle">
-					  <div class="text">cotton linter<br>acrylic</div>
-					</div>
+			<div class="gallery-grid gallery-row-1">
+				<div class="hover-container">
+					<Image src={les} alt="leslie" quality={100}/>
+					<div class="hover-text">cotton linter<br>acrylic</div>
 				</div>
 			</div>
 			
 
-			<div class="row">
-				<div class="container">
-					<Image src={line} alt="line" class="image" width={900}/>
-					<div class="middle">
-						<div class="text">gouache<br>colored pencil<br>chalk pastel</div>
-					</div>
+			<div class="gallery-grid gallery-row-1">
+				<div class="hover-container">
+					<Image src={line} alt="line" quality={100}/>
+					<div class="hover-text">gouache<br>colored pencil<br>chalk pastel</div>
 				</div>	
 			</div>
 
 
-			<div class="row">
-				<div class="container">
-					<Image src={driveway} alt="front driveway" class="image" height={382}/>
-					<div class="middle">
-						<div class="text">chalk pastel<br>gouache</div>
-					</div>
+			<div class="gallery-grid gallery-row-2">
+				<div class="hover-container">
+					<Image src={driveway} alt="front driveway" quality={100}/>
+					<div class="hover-text">chalk pastel<br>gouache</div>
 				</div>	
 
-				<div class="container">
-					<Image src={pools} alt="philly litho print" class="image" height={382}/>
-					<div class="middle">
-						<div class="text">lithographic ink</div>
-					</div>
+				<div class="hover-container">
+					<Image src={pools} alt="philly litho print" quality={100}/>
+					<div class="hover-text">lithographic ink</div>
 				</div>	
 			</div>
 
 
-			<div class="row">
-				<div class="container">
-					<Image src={hand} alt="hand" class="image" width={900}/>
-					<div class="middle">
-						<div class="text">colored pencil<br>gouache</div>
-					</div>
+			<div class="gallery-grid gallery-row-1">
+				<div class="hover-container">
+					<Image src={hand} alt="hand" quality={100}/>
+					<div class="hover-text">colored pencil<br>gouache</div>
 				</div>	
 			</div>
 
 
-			<div class="row">
-				<div class="container">
-					<Image src={still} alt="still life" class="image" height={575}/>
-					<div class="middle">
-						<div class="text">chalk pastel</div>
-					</div>
+			<div class="gallery-grid gallery-row-2">
+				<div class="hover-container">
+					<Image src={still} alt="still life" quality={100}/>
+					<div class="hover-text">chalk pastel</div>
 				</div>	
 
-				<div class="container">
-					<Image src={maine} alt="maine stamps" class="image" height={575}/>
-					<div class="middle">
-						<div class="text">lioncuts<br>acrylic</div>
-					</div>
+				<div class="hover-container">
+					<Image src={maine} alt="maine stamps" quality={100}/>
+					<div class="hover-text">lioncuts<br>acrylic</div>
 				</div>	
 
 

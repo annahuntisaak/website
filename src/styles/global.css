@@ -1,32 +1,56 @@
+/* Import Pico CSS with custom overrides */
+@import './pico-custom.css';
+
+/* Keep original styling that Pico doesn't override */
 html {
     background-color: rgb(255, 246, 242);
-    font-family: monospace;
-    /* font-family: Didiot, serif; */
-  }
-  
-body {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 125ch;
-    padding: 10rem 8rem;
-    line-height: 1.75;
-
-    color: rgb(81, 56, 46);
-    letter-spacing: 1px;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-h1 {
-    color: rgb(68, 33, 9);
-    font-size: 16px;
-    font-weight: 600;
 }
 
-p {
-    color: rgb(81, 56, 46);
-    font-size: 12px;
-    font-weight: normal;
+/* Additional custom styles for specific components */
+.signature-image {
+    max-width: 250px;
+    height: auto;
+}
+
+.home-text {
+    max-width: 325px;
+}
+
+/* Gallery specific styles */
+.gallery-row-1 {
+    grid-template-columns: 1fr;
+}
+
+.gallery-row-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.gallery-row-3 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Hover effects for traditional art */
+.hover-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    text-align: center;
+    color: inherit;
+}
+
+.hover-container:hover .hover-text {
+    opacity: 1;
+}
+
+.hover-container:hover img {
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
 }

@@ -1,0 +1,178 @@
+/* Import Pico.css */
+@import '@picocss/pico/css/pico.min.css';
+
+/* Custom theme overrides to maintain the artistic aesthetic */
+:root {
+    /* Force light theme regardless of system preference */
+    --pico-color-scheme: light;
+    
+    /* Override Pico's default colors with the original site colors */
+    --pico-background-color: rgb(255, 246, 242) !important;
+    --pico-color: rgb(81, 56, 46) !important;
+    --pico-h1-color: rgb(68, 33, 9) !important;
+    --pico-h2-color: rgb(68, 33, 9) !important;
+    --pico-h3-color: rgb(68, 33, 9) !important;
+    --pico-h4-color: rgb(68, 33, 9) !important;
+    --pico-h5-color: rgb(68, 33, 9) !important;
+    --pico-h6-color: rgb(68, 33, 9) !important;
+    --pico-primary: rgb(175, 159, 148) !important;
+    --pico-primary-hover: rgb(68, 33, 9) !important;
+    --pico-primary-focus: rgba(175, 159, 148, 0.125) !important;
+    --pico-primary-inverse: rgb(255, 246, 242) !important;
+    
+    /* Typography */
+    --pico-font-family: monospace;
+    --pico-font-size: 12px;
+    --pico-line-height: 1.75;
+    --pico-font-weight: normal;
+    
+    /* Spacing */
+    --pico-spacing: 1rem;
+    --pico-typography-spacing-vertical: 1.5rem;
+    
+    /* Border radius - minimal for artistic look */
+    --pico-border-radius: 0;
+    --pico-border-width: 0;
+    
+    /* Container width */
+    --pico-container-max-width: 100%;
+}
+
+/* Force light theme colors regardless of system preference */
+[data-theme="light"],
+[data-theme="dark"],
+:root:not([data-theme]) {
+    --pico-background-color: rgb(255, 246, 242) !important;
+    --pico-color: rgb(81, 56, 46) !important;
+}
+
+/* Reset Pico's defaults to match original styling */
+body {
+    letter-spacing: 1px;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(255, 246, 242) !important;
+    color: rgb(81, 56, 46) !important;
+}
+
+/* Typography overrides with forced colors */
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(68, 33, 9) !important;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 12px;
+    font-weight: normal;
+    color: rgb(81, 56, 46) !important;
+}
+
+/* Force text colors throughout */
+* {
+    color: inherit;
+}
+
+/* Ensure consistent text color inheritance */
+.container,
+.container * {
+    color: rgb(81, 56, 46);
+}
+
+/* Navigation styling */
+nav {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(175, 159, 148) !important;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 4.5px;
+}
+
+nav a:hover {
+    text-decoration: none;
+    background: none;
+    color: rgb(68, 33, 9) !important;
+}
+
+/* Container overrides */
+.container {
+    padding: 2rem;
+}
+
+/* Image responsive by default in Pico */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Custom utility classes */
+.nav-horizontal {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.nav-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Grid layouts using Pico's responsive grid */
+.home-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    .nav-horizontal {
+        font-size: 10px;
+        gap: 1rem;
+        letter-spacing: 2px;
+    }
+    
+    .home-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .nav-vertical {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* Remove Pico's button and form styling */
+button, input, select, textarea {
+    all: revert;
+}
+
+/* Custom classes for maintaining original layout */
+.artistic-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}

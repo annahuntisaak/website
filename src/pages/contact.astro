@@ -8,7 +8,7 @@ import linkedin from '../assets/contact/linked_b.png';
 const pageTitle = "contact";
 ---
 
-<nav class = "top_navs">
+<nav class="nav-horizontal">
 	<a href="/">home</a>
 	<a href="/research/">research</a>
 	<a href="/traditional art/">traditional art</a>
@@ -27,72 +27,81 @@ const pageTitle = "contact";
     </head>
 
     <style>
-
-        /* NAVIGATION BUTTONS */
-        .top_navs {
-            /* placing navigation buttons where desired */
-            position: absolute;
-            display: flex;
-            flex-direction: row; 
-            top: 5rem; 
-
-            /* spacing between buttons and of the lettering */
-            font-size: 12px;
-            gap: 5rem;  
-            letter-spacing: 4.5px;   
-            
-            /* to prevent buttons from being underlined or changing color */
-            text-decoration: none;
+        /* Use Pico's responsive layout */
+        body {
+            padding-top: 4rem;
         }
 
-        .top_navs a{
-            text-decoration: none;
-            color: rgb(175, 159, 148);
-        }
-
+        /* Link styling */
         a {
             text-decoration: none;    
         }
 
+        /* Social media links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 2rem;
+            justify-content: flex-start;
+        }
+
+        .social-links img {
+            max-width: 60px;
+            height: auto;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .social-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .social-links img {
+                max-width: 50px;
+            }
+        }
     </style>
 
     <body>
-        <p>
-            I'd love to hear from you!  Please feel free to message me at either of the below email addresses
-        and to connect via social media platforms.
-        </p>
+        <div class="container">
+            <p>
+                I'd love to hear from you!  Please feel free to message me at either of the below email addresses
+            and to connect via social media platforms.
+            </p>
 
-        <br>
-        
-        <h1>
-            academic and professional
-        </h1>
-        <p>
-            anna.hunt-isaak@mail.mcgill.ca <br> For discussions regarding my research, body of work, and 
-            any academic or professional opportunities.
-        </p>
+            <br>
+            
+            <h1>
+                academic and professional
+            </h1>
+            <p>
+                anna.hunt-isaak@mail.mcgill.ca <br> For discussions regarding my research, body of work, and 
+                any academic or professional opportunities.
+            </p>
 
-        <br>
+            <br>
 
-        <h1>
-            personal
-        </h1>
-        <p>
-            annahuntisaak@gmail.com <br> For all other subject matter.
-        </p>
+            <h1>
+                personal
+            </h1>
+            <p>
+                annahuntisaak@gmail.com <br> For all other subject matter.
+            </p>
 
-        <br><br><br><br>
+            <br><br><br><br>
 
-        <a href="https://www.linkedin.com/in/anna-rose-hunt-isaak">
-            <Image src={linkedin} alt="linkedin logo" class="image" height={60} quality={100}/>
-        </a>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/anna-rose-hunt-isaak">
+                    <Image src={linkedin} alt="linkedin logo" quality={100}/>
+                </a>
 
-        &nbsp;
-
-        <a href="https://www.instagram.com/annameigui/">
-            <Image src={instagram} alt="instagram logo" class="image" height={60} quality={100}/>
-        </a>
-
+                <a href="https://www.instagram.com/annameigui/">
+                    <Image src={instagram} alt="instagram logo" quality={100}/>
+                </a>
+            </div>
+        </div>
     </body>
 
 </html>

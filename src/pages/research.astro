@@ -8,7 +8,7 @@ import poster from '../assets/research/poster.jpg';
 const pageTitle = "research";
 ---
 
-<nav class = "top_navs">
+<nav class="nav-horizontal">
 	<a href="/">home</a>
 	<a href="/research/">research</a>
 	<a href="/traditional art/">traditional art</a>
@@ -27,92 +27,90 @@ const pageTitle = "research";
     </head>
 
     <style>
-
-        /* NAVIGATION BUTTONS */
-        .top_navs {
-            /* placing navigation buttons where desired */
-            position: absolute;
-            display: flex;
-            flex-direction: row; 
-            top: 5rem; 
-
-            /* spacing between buttons and of the lettering */
-            font-size: 12px;
-            gap: 5rem;  
-            letter-spacing: 4.5px;   
-            
-            /* to prevent buttons from being underlined or changing color */
-            text-decoration: none;
+        /* Use Pico's responsive layout */
+        body {
+            padding-top: 4rem;
         }
 
-        .top_navs a{
-            text-decoration: none;
-            color: rgb(175, 159, 148);
-        }
-
+        /* Link styling */
         a {
             text-decoration: none;      
             color: rgb(175, 159, 148);           
         }
 
-        .image{
-            margin-right: 1.1rem;
+        /* Research images container */
+        .research-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.1rem;
+            margin-top: 1rem;
         }
 
+        .research-images img {
+            width: 100%;
+            height: auto;
+        }
 
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .research-images {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+            
+            .research-images a {
+                max-width: 300px;
+            }
+        }
     </style>
  
 
     <body>
+        <div class="container">
+            <p>
+                I've had the opportunity to explore a variety of research 
+                <br>
+                Download my
+                <a href="/pub_assets/cv.pdf" target = "_blank">CV</a>!
+            </p>
 
-        <p>
-            I've had the opportunity to explore a variety of research 
-            <br>
-            Download my
-            <a href="/pub_assets/cv.pdf" target = "_blank">CV</a>!
-        </p>
-
-        <br><br>
-
-        <h1>m2b3 lab</h1>
-        <p>
-            I'm currently completing my honors research in the mind, machines, brain, body, behavior (m2b3) Lab under the supervision of
-            Dr. Krishna.  Utilizing psychophysics experiments , we are investigating the 
             <br><br>
-            <a href = "https://m2b3.github.io/">m2b3 website</a>
-        </p>
 
+            <h1>m2b3 lab</h1>
+            <p>
+                I'm currently completing my honors research in the mind, machines, brain, body, behavior (m2b3) Lab under the supervision of
+                Dr. Krishna.  Utilizing psychophysics experiments , we are investigating the 
+                <br><br>
+                <a href = "https://m2b3.github.io/">m2b3 website</a>
+            </p>
 
-        <br><br>
+            <br><br>
 
+            <h1>the crook lab</h1>
+            <p>
+                Worked closely with 
+            </p>
 
-        <h1>the crook lab</h1>
-        <p>
-            Worked closely with 
-        </p>
+            <br>
 
-        <br>
+            <div class="research-images">
+                <a href="/pub_assets/presentation.pdf" target="_blank">
+                    <Image
+                    src = {first}
+                    alt = "first slide of PDF"
+                    quality={100}
+                    />
+                </a>
 
-        <a href="/pub_assets/presentation.pdf" target="_blank">
-            <Image
-			src = {first}
-			alt = "first slide of PDF"
-			class = "image"
-			height = {235} 
-			quality={100}
-		    />
-        </a>
-
-        <a href="/pub_assets/poster.jpg" target="_blank">
-            <Image
-			src = {poster}
-			alt = "poster"
-			class = "image"
-			height = {235} 
-			quality={100}
-		    />
-        </a>
-        
+                <a href="/pub_assets/poster.jpg" target="_blank">
+                    <Image
+                    src = {poster}
+                    alt = "poster"
+                    quality={100}
+                    />
+                </a>
+            </div>
+        </div>
     </body>
 
 </html>
