@@ -12,7 +12,7 @@ body {
     line-height: 1.75;
 
     color: rgb(81, 56, 46);
-    letter-spacing: 1px;
+    letter-spacing: 0.08rem;
   }
   
   * {
