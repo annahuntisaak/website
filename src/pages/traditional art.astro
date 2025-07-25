@@ -2,6 +2,7 @@
 import '../styles/global.css';
 
 import { Image } from 'astro:assets';
+import name from '../assets/home/name.png';
 import driveway from '../assets/traditional/driveway.jpeg'
 import hand from '../assets/traditional/hand.jpeg';
 import les from '../assets/traditional/les.jpeg';
@@ -16,7 +17,7 @@ const pageTitle = "traditional art";
 <nav class = "top_navs">
 	<a href="/">home</a>
 	<a href="/research/">research</a>
-	<a href="/traditional art/">traditional art</a>
+	<a href="/traditional art/">traditional&nbsp;art</a>
 	<a href="/photography/">photography</a>
 	<a href="/contact/">contact</a>
 </nav>
@@ -39,7 +40,7 @@ const pageTitle = "traditional art";
             position: absolute;
             display: flex;
             flex-direction: row; 
-            top: 5rem; 
+            top: 8%; 
 
             /* spacing between buttons and of the lettering */
             font-size: 12px;
@@ -119,7 +120,14 @@ const pageTitle = "traditional art";
 	</style>
 
 
-	<body>
+	<body>		
+		
+		<Image
+			src = {name}
+			alt = "name logo"
+			class = 'name_image'
+		/>
+
 		<div class="gallery">
 
 			<div class="row">
@@ -146,7 +154,7 @@ const pageTitle = "traditional art";
 				<div class="container">
 					<Image src={driveway} alt="front driveway" class="image" height={382}/>
 					<div class="middle">
-						<div class="text">chalk pastel</div>
+						<div class="text">chalk pastel<br>gouache</div>
 					</div>
 				</div>	
 
@@ -171,7 +179,7 @@ const pageTitle = "traditional art";
 
 			<div class="row">
 				<div class="container">
-					<Image src={still} alt="still life" class="image" height={575}/>
+					<Image src={still} alt="still life" class="image" height={575} quality={100}/>
 					<div class="middle">
 						<div class="text">chalk pastel</div>
 					</div>

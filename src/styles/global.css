@@ -4,6 +4,7 @@ html {
     /* font-family: Didiot, serif; */
   }
   
+
 body {
     margin: 0 auto;
     width: 100%;
@@ -14,6 +15,7 @@ body {
     color: rgb(81, 56, 46);
     letter-spacing: 0.08rem;
   }
+
   
   * {
     box-sizing: border-box;
@@ -29,4 +31,15 @@ p {
     color: rgb(81, 56, 46);
     font-size: 12px;
     font-weight: normal;
+}
+
+
+.name_image {
+  position: absolute;
+  display: flex;
+  height: 15vh;
+  width: auto;
+
+  top: 4vh;
+  left: 4vh;
 }

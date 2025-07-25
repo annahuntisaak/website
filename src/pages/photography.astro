@@ -2,6 +2,9 @@
 import '../styles/global.css';
 
 import { Image } from 'astro:assets';
+
+import name from '../assets/home/name.png';
+
 import annex from '../assets/film/annex.jpg';
 import beach from '../assets/film/beach.jpg';
 import bench from '../assets/film/bench.jpg';
@@ -45,7 +48,7 @@ const pageTitle = "photography";
 <nav class = "top_navs">
 	<a href="/">home</a>
 	<a href="/research/">research</a>
-	<a href="/traditional art/">traditional art</a>
+	<a href="/traditional art/">traditional&nbsp;art</a>
 	<a href="/photography/">photography</a>
 	<a href="/contact/">contact</a>
 </nav>
@@ -68,7 +71,7 @@ const pageTitle = "photography";
             position: absolute;
             display: flex;
             flex-direction: row; 
-            top: 5rem; 
+            top: 8%; 
 
             /* spacing between buttons and of the lettering */
             font-size: 12px;
@@ -89,6 +92,7 @@ const pageTitle = "photography";
 			padding: 0rem 3rem;
 			max-width: 1200px;
 			margin: 0 auto;
+			margin-top: 4%;
 		}
 
 		.row {
@@ -103,6 +107,13 @@ const pageTitle = "photography";
 
 
 	<body>
+
+		<Image
+			src = {name}
+			alt = "name logo"
+			class = 'name_image'
+		/>
+		
 		<div class="full_gallery">
 
 			<div class="row">

@@ -2,6 +2,7 @@
 import '../styles/global.css';
 
 import { Image } from 'astro:assets';
+import name from '../assets/home/name.png';
 import first from '../assets/research/first.jpg';
 import poster from '../assets/research/poster.jpg';
 import eyelink from '../assets/research/eyelink.jpg';
@@ -12,7 +13,7 @@ const pageTitle = "research";
 <nav class = "top_navs">
 	<a href="/">home</a>
 	<a href="/research/">research</a>
-	<a href="/traditional art/">traditional art</a>
+	<a href="/traditional art/">traditional&nbsp;art</a>
 	<a href="/photography/">photography</a>
 	<a href="/contact/">contact</a>
 </nav>
@@ -35,7 +36,8 @@ const pageTitle = "research";
             position: absolute;
             display: flex;
             flex-direction: row; 
-            top: 5rem; 
+
+            top: 8%; 
 
             /* spacing between buttons and of the lettering */
             font-size: 12px;
@@ -99,6 +101,12 @@ const pageTitle = "research";
  
 
     <body>
+
+        <Image
+		src = {name}
+		alt = "name logo"
+		class = 'name_image'
+		/>
 
         <p>
             I've had the opportunity to explore several areas of research dedicated to better understanding various 

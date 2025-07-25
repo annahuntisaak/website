@@ -8,9 +8,20 @@ import name from '../assets/home/name.png';
 const pageTitle = "anna rose hunt-isaak";
 ---
 
+<!--
 <nav class = "vertical_home_navs">
 	<a href="/research/">research</a>
 	<a href="/traditional art/">traditional art</a>
+	<a href="/photography/">photography</a>
+	<a href="/contact/">contact</a>
+</nav>
+-->
+
+
+<nav class = "top_navs">
+	<a href="/">home</a>
+	<a href="/research/">research</a>
+	<a href="/traditional art/">traditional&nbsp;art</a>
 	<a href="/photography/">photography</a>
 	<a href="/contact/">contact</a>
 </nav>
@@ -26,94 +37,103 @@ const pageTitle = "anna rose hunt-isaak";
 
 		<style>
 
+			body {
+				max-width: none;
+			}
+
 			/* NAVIGATION BUTTONS */
-			.vertical_home_navs {
+			.top_navs {
 				/* placing navigation buttons where desired */
 				position: absolute;
 				display: flex;
-  				flex-direction: column; 
-				top: 30rem; 
-				left: 6rem;
+				flex-direction: row; 
+				flex-shrink: none;
 
-				/* font size and spacing between buttons and of the lettering */
-  				font-size: 12px;
+				margin-left: 16.5%;
+				top: 8%;
+
+				/* spacing between buttons and of the lettering */
+				font-size: 12px;
+				gap: 5rem;  
 				letter-spacing: 4.5px;   
-				gap: 3rem;  
 				
 				/* to prevent buttons from being underlined or changing color */
 				text-decoration: none;
-			}
+        	}
 
-			.vertical_home_navs a{
+        	.top_navs a {
 				text-decoration: none;
-				color: inherit;
-			}
+				color: rgb(175, 159, 148);
+        	}
 
+			.home_container {
+				display: flex;
+				align-items: center;
+				width: 86%;
 
-			body { 
-				margin: 0;
-				width: 100%;
-				max-width: none;
-				padding: 4rem 4rem;
+				margin-top: 4%;
+				margin-left: 7%; 
+				gap: 6%;   
 			}
 
 			.home_image {
-				position: absolute;
-				display: block;
-				top: 7rem;
-				left: 27rem;
-				right: auto; 
-			}
-
-			.name_image {
-				display: block;
-				margin-top: 0.5rem;
-				margin-left: 0rem;
+				height: 60vh;
+				width:auto;
 			}
 
 			.home_text {
 				line-height: 1.75;
-				width: 325px; 
+				flex: 1;  
+			}		
+			
+			.name_image {
 				position: absolute;
-				top: 7rem;  
-				left: 81.5rem;
-				right: 6rem;                                   
+				display: flex;
+				height: 15vh;
+				width: auto;
+
+				top: 4vh;
+				left: 4vh;
 			}
 
 		</style>
 	</head>
 
 	<body>
-
+		
 		<Image
-			src = {name}
-			alt = "name logo"
-			class = "name_image"
-			height = {230} 
-			quality={100}
+		src = {name}
+		alt = "name logo"
+		class = 'name_image'
 		/>
-		<Image
+
+
+		<div class="home_container">
+
+			<Image
 			src = {homeImg}
 			alt = "me in Portland"
 			class = "home_image"
-			height = {600} 
+			height = {650} 
 			quality={100}
-		/>
+			/>
 
-		<div class = "home_text">
-			<p>
-				I'm an undergraduate student researcher and multi-media artist, approaching my final year at McGill University.  Pursuing 
-				my BASc in Cognitive Science, I focus primarily on neuroscience and computer science.
-			</p>
-			<p>
-				I'm interested in exploring the complex intersections of human cognition and behavior, technology, art, 
-				and design.  I hope to gain greater hands-on experience with the research and development of technologies
-				that foster close, reciprocal relationships with their biological users and to discover the roles that 
-				human-oriented design, aesthetics, and creative expression have to play in this world.
-			</p>
-			<p>
-				On the weekends, you can find me baking, reading, and rediscovering my love for oil painting!
-			</p>
+			<div class = "home_text">
+				<p>
+					I'm Anna Rose Hunt-Isaak, an undergraduate student researcher and multimedia artist, approaching my final year at McGill University.  
+					Pursuing my BASc in Cognitive Science, I focus primarily on neuroscience and computer science.
+				</p>
+				<p>
+					I'm interested in exploring the complex intersections of human cognition and behavior, technology, art, 
+					and design.  I hope to gain greater hands-on experience with the research and development of technologies
+					that foster close, reciprocal relationships with their biological users and to discover the roles that 
+					human-oriented design, aesthetics, and creative expression have to play in this world.
+				</p>
+				<p>
+					On the weekends, you can find me baking, reading, and rediscovering my love for oil painting!
+				</p>
+			</div>
+
 		</div>
 
 	</body>

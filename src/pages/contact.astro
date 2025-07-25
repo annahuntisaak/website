@@ -2,6 +2,7 @@
 import '../styles/global.css';
 
 import { Image } from 'astro:assets';
+import name from '../assets/home/name.png';
 import instagram from '../assets/contact/insta_b.png';
 import linkedin from '../assets/contact/linked_b.png';
 
@@ -11,7 +12,7 @@ const pageTitle = "contact";
 <nav class = "top_navs">
 	<a href="/">home</a>
 	<a href="/research/">research</a>
-	<a href="/traditional art/">traditional art</a>
+	<a href="/traditional art/">traditional&nbsp;art</a>
 	<a href="/photography/">photography</a>
 	<a href="/contact/">contact</a>
 </nav>
@@ -34,7 +35,7 @@ const pageTitle = "contact";
             position: absolute;
             display: flex;
             flex-direction: row; 
-            top: 5rem; 
+            top: 8%; 
 
             /* spacing between buttons and of the lettering */
             font-size: 12px;
@@ -57,6 +58,12 @@ const pageTitle = "contact";
     </style>
 
     <body>
+        <Image
+            src = {name}
+            alt = "name logo"
+            class = 'name_image'
+        />
+        
         <p>
             I'd love to hear from you!  Please feel free to message me at either of the below email addresses
             and to connect via social media platforms.
