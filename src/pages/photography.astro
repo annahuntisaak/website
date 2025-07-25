@@ -65,14 +65,17 @@ const pageTitle = "photography";
         /* NAVIGATION BUTTONS */
         .top_navs {
             /* placing navigation buttons where desired */
-            position: absolute;
+            position: sticky;
+            top: 2rem;
             display: flex;
             flex-direction: row; 
-            top: 5rem; 
+            justify-content: center;
+            margin-bottom: clamp(3rem, 6vw, 5rem);
+            z-index: 10;
 
             /* spacing between buttons and of the lettering */
-            font-size: 12px;
-            gap: 5rem;  
+            font-size: clamp(10px, 1.8vw, 12px);
+            gap: clamp(2rem, 4vw, 5rem);  
             letter-spacing: 4.5px;   
             
             /* to prevent buttons from being underlined or changing color */
@@ -84,19 +87,56 @@ const pageTitle = "photography";
             color: rgb(175, 159, 148);
         }
 
-		/* CHANGING STYLE FOR THE IMAGES SO THEY FIT ON WHOLE SCREEN */
+		/* RESPONSIVE GALLERY */
 		.full_gallery {
-			padding: 0rem 3rem;
+			padding: 0 clamp(1rem, 4vw, 3rem);
 			max-width: 1200px;
 			margin: 0 auto;
 		}
 
 		.row {
-			display: flex;
+			display: grid;
 			justify-content: center;
-			gap: 1rem;
-			margin-bottom: 1rem;
-			flex-wrap: nowrap;
+			align-items: center;
+			gap: clamp(0.5rem, 2vw, 1rem);
+			margin-bottom: clamp(0.5rem, 2vw, 1rem);
+			width: 100%;
+		}
+
+		/* Different grid layouts for different row types */
+		.row-3 {
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		}
+
+		.row-2 {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
+
+		.row-1 {
+			grid-template-columns: 1fr;
+			justify-items: center;
+		}
+
+		/* Mobile responsive adjustments */
+		@media (max-width: 768px) {
+			.top_navs {
+				flex-wrap: wrap;
+				gap: clamp(1rem, 3vw, 2rem);
+				padding: 0 1rem;
+			}
+
+			.row-3,
+			.row-2 {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.top_navs {
+				gap: 1rem;
+				font-size: 10px;
+				letter-spacing: 2px;
+			}
 		}
 
     </style>
@@ -105,97 +145,97 @@ const pageTitle = "photography";
 	<body>
 		<div class="full_gallery">
 
-			<div class="row">
-				<Image src = {lightpost} alt = "poster" class = "image" height = {280} quality={100} />
-				<Image src = {hotdog} alt = "poster" class = "image" height = {280} quality={100} />
-				<Image src = {leaves} alt = "poster" class = "image" height = {280} quality={100} />
+			<div class="row row-3">
+				<Image src = {lightpost} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {hotdog} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {leaves} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {annex} alt = "poster" class = "image" height = {424} quality={100} />
-				<Image src = {trinkets} alt = "poster" class = "image" height = {424} quality={100} />
+			<div class="row row-2">
+				<Image src = {annex} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {trinkets} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {grammy} alt = "poster" class = "image" height = {930} quality={100} />
+			<div class="row row-1">
+				<Image src = {grammy} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {house} alt = "poster" class = "image" height = {424} quality={100} />
-				<Image src = {bedroom} alt = "poster" class = "image" height = {424} quality={100} />
+			<div class="row row-2">
+				<Image src = {house} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {bedroom} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {dinner} alt = "poster" class = "image" height = {865} quality={100} />
+			<div class="row row-1">
+				<Image src = {dinner} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {water} alt = "poster" class = "image" height = {281} quality={100} />
-				<Image src = {wedding} alt = "poster" class = "image" height = {281} quality={100} />
-				<Image src = {stairs} alt = "poster" class = "image" height = {281} quality={100} />
+			<div class="row row-3">
+				<Image src = {water} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {wedding} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {stairs} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {dukeonetree} alt = "poster" class = "image" height = {434} quality={100} />
-				<Image src = {pond} alt = "poster" class = "image" height = {434} quality={100} />
+			<div class="row row-2">
+				<Image src = {dukeonetree} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {pond} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {zoe} alt = "poster" class = "image" height = {858} quality={100} />
+			<div class="row row-1">
+				<Image src = {zoe} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {md} alt = "poster" class = "image" height = {424} quality={100} />
-				<Image src = {ml} alt = "poster" class = "image" height = {424} quality={100} />
+			<div class="row row-2">
+				<Image src = {md} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {ml} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {sink} alt = "poster" class = "image" height = {275} quality={100} />
-				<Image src = {market} alt = "poster" class = "image" height = {275} quality={100} />
-				<Image src = {tofu} alt = "poster" class = "image" height = {275} quality={100} />
+			<div class="row row-3">
+				<Image src = {sink} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {market} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {tofu} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {duketrees} alt = "poster" class = "image" height = {860} quality={100} />
+			<div class="row row-1">
+				<Image src = {duketrees} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {rocks} alt = "poster" class = "image" height = {425} quality={100} />
-				<Image src = {kitchen} alt = "poster" class = "image" height = {425} quality={100} />
+			<div class="row row-2">
+				<Image src = {rocks} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {kitchen} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {village} alt = "poster" class = "image" height = {285} quality={100} />
-				<Image src = {bench} alt = "poster" class = "image" height = {285} quality={100} />
-				<Image src = {dorm} alt = "poster" class = "image" height = {285} quality={100} />
+			<div class="row row-3">
+				<Image src = {village} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {bench} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {dorm} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {office} alt = "poster" class = "image" height = {400} quality={100} />
-				<Image src = {cat} alt = "poster" class = "image" height = {400} quality={100} />
+			<div class="row row-2">
+				<Image src = {office} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {cat} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {treewater} alt = "poster" class = "image" height = {856} quality={100} />
+			<div class="row row-1">
+				<Image src = {treewater} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {golden} alt = "poster" class = "image" height = {402} quality={100} />
-				<Image src = {street} alt = "poster" class = "image" height = {402} quality={100} />
+			<div class="row row-2">
+				<Image src = {golden} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {street} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {bikes} alt = "poster" class = "image" height = {854} quality={100} />
+			<div class="row row-1">
+				<Image src = {bikes} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {beach} alt = "poster" class = "image" height = {279} quality={100} />
-				<Image src = {tea} alt = "poster" class = "image" height = {279} quality={100} />
-				<Image src = {sunset} alt = "poster" class = "image" height = {279} quality={100} />
+			<div class="row row-3">
+				<Image src = {beach} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {tea} alt = "poster" class = "responsive-image" quality={100} />
+				<Image src = {sunset} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
-			<div class="row">
-				<Image src = {mountain} alt = "poster" class = "image" height = {820} quality={100} />
+			<div class="row row-1">
+				<Image src = {mountain} alt = "poster" class = "responsive-image" quality={100} />
 			</div>
 
 		</div>

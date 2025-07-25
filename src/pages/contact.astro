@@ -31,14 +31,17 @@ const pageTitle = "contact";
         /* NAVIGATION BUTTONS */
         .top_navs {
             /* placing navigation buttons where desired */
-            position: absolute;
+            position: sticky;
+            top: 2rem;
             display: flex;
             flex-direction: row; 
-            top: 5rem; 
+            justify-content: center;
+            margin-bottom: clamp(3rem, 6vw, 5rem);
+            z-index: 10;
 
             /* spacing between buttons and of the lettering */
-            font-size: 12px;
-            gap: 5rem;  
+            font-size: clamp(10px, 1.8vw, 12px);
+            gap: clamp(2rem, 4vw, 5rem);  
             letter-spacing: 4.5px;   
             
             /* to prevent buttons from being underlined or changing color */
@@ -52,6 +55,44 @@ const pageTitle = "contact";
 
         a {
             text-decoration: none;    
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .social-links .image {
+            max-width: 60px;
+            height: auto;
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .top_navs {
+                flex-wrap: wrap;
+                gap: clamp(1rem, 3vw, 2rem);
+                padding: 0 1rem;
+            }
+
+            .social-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top_navs {
+                gap: 1rem;
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            .social-links .image {
+                max-width: 50px;
+            }
         }
 
     </style>
@@ -83,15 +124,15 @@ const pageTitle = "contact";
 
         <br><br><br><br>
 
-        <a href="https://www.linkedin.com/in/anna-rose-hunt-isaak">
-            <Image src={linkedin} alt="linkedin logo" class="image" height={60} quality={100}/>
-        </a>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/anna-rose-hunt-isaak">
+                <Image src={linkedin} alt="linkedin logo" class="image" quality={100}/>
+            </a>
 
-        &nbsp;
-
-        <a href="https://www.instagram.com/annameigui/">
-            <Image src={instagram} alt="instagram logo" class="image" height={60} quality={100}/>
-        </a>
+            <a href="https://www.instagram.com/annameigui/">
+                <Image src={instagram} alt="instagram logo" class="image" quality={100}/>
+            </a>
+        </div>
 
     </body>
 

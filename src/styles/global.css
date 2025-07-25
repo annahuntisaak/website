@@ -8,7 +8,7 @@ body {
     margin: 0 auto;
     width: 100%;
     max-width: 125ch;
-    padding: 10rem 8rem;
+    padding: clamp(2rem, 8vw, 10rem) clamp(1rem, 6vw, 8rem);
     line-height: 1.75;
 
     color: rgb(81, 56, 46);
@@ -21,12 +21,65 @@ body {
   
 h1 {
     color: rgb(68, 33, 9);
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     font-weight: 600;
 }
 
 p {
     color: rgb(81, 56, 46);
-    font-size: 12px;
+    font-size: clamp(11px, 1.8vw, 12px);
     font-weight: normal;
+}
+
+/* Responsive utilities */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 3rem);
+}
+
+/* Image responsive utilities */
+.responsive-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Responsive grid utilities */
+.responsive-grid {
+    display: grid;
+    gap: clamp(1rem, 3vw, 2rem);
+    width: 100%;
+}
+
+/* Mobile breakpoints */
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+    }
+    
+    .mobile-stack {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .mobile-center {
+        text-align: center;
+    }
+    
+    .mobile-hide {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-small-text {
+        font-size: 10px;
+    }
+    
+    .mobile-small-gap {
+        gap: 1rem;
+    }
 }

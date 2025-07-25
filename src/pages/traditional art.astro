@@ -36,14 +36,17 @@ const pageTitle = "traditional art";
         /* NAVIGATION BUTTONS */
         .top_navs {
             /* placing navigation buttons where desired */
-            position: absolute;
+            position: sticky;
+            top: 2rem;
             display: flex;
             flex-direction: row; 
-            top: 5rem; 
+            justify-content: center;
+            margin-bottom: clamp(3rem, 6vw, 5rem);
+            z-index: 10;
 
             /* spacing between buttons and of the lettering */
-            font-size: 12px;
-            gap: 5rem;  
+            font-size: clamp(10px, 1.8vw, 12px);
+            gap: clamp(2rem, 4vw, 5rem);  
             letter-spacing: 4.5px;   
             
             /* to prevent buttons from being underlined or changing color */
@@ -56,25 +59,50 @@ const pageTitle = "traditional art";
 		}
 
 
-		/* DISPLAYING IMAGES */
+		/* RESPONSIVE GALLERY */
 		.gallery {
-			/*
-			display: grid;
-			gap: 4rem;
-			*/
-
-			padding: 0rem 3rem;
+			padding: 0 clamp(1rem, 4vw, 3rem);
 			max-width: 1200px;
 			margin: 0 auto;
-		
 		}
 
 		.row {
-			display: flex;
+			display: grid;
 			justify-content: center;
-			gap: 2rem;
-			margin-bottom: 3rem;
-			flex-wrap: nowrap;
+			gap: clamp(1rem, 3vw, 2rem);
+			margin-bottom: clamp(2rem, 4vw, 3rem);
+			width: 100%;
+		}
+
+		/* Different grid layouts for different row types */
+		.row-1 {
+			grid-template-columns: 1fr;
+			justify-items: center;
+		}
+
+		.row-2 {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
+
+		/* Mobile responsive adjustments */
+		@media (max-width: 768px) {
+			.top_navs {
+				flex-wrap: wrap;
+				gap: clamp(1rem, 3vw, 2rem);
+				padding: 0 1rem;
+			}
+
+			.row-2 {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.top_navs {
+				gap: 1rem;
+				font-size: 10px;
+				letter-spacing: 2px;
+			}
 		}
 
 
@@ -82,6 +110,8 @@ const pageTitle = "traditional art";
 		.container {
 			position: relative;
 			display: inline-block;
+			width: 100%;
+			max-width: 100%;
 		}
 
 		.image {
@@ -89,6 +119,9 @@ const pageTitle = "traditional art";
 			display: block;
 			transition: .5s ease;
 			backface-visibility: hidden;
+			width: 100%;
+			height: auto;
+			object-fit: cover;
 		}
 
 		.middle {
@@ -122,9 +155,9 @@ const pageTitle = "traditional art";
 	<body>
 		<div class="gallery">
 
-			<div class="row">
+			<div class="row row-1">
 				<div class="container">
-					<Image src={les} alt="leslie" class="image" width={900}/>
+					<Image src={les} alt="leslie" class="image"/>
 					<div class="middle">
 					  <div class="text">cotton linter<br>acrylic</div>
 					</div>
@@ -132,9 +165,9 @@ const pageTitle = "traditional art";
 			</div>
 			
 
-			<div class="row">
+			<div class="row row-1">
 				<div class="container">
-					<Image src={line} alt="line" class="image" width={900}/>
+					<Image src={line} alt="line" class="image"/>
 					<div class="middle">
 						<div class="text">gouache<br>colored pencil<br>chalk pastel</div>
 					</div>
@@ -142,16 +175,16 @@ const pageTitle = "traditional art";
 			</div>
 
 
-			<div class="row">
+			<div class="row row-2">
 				<div class="container">
-					<Image src={driveway} alt="front driveway" class="image" height={382}/>
+					<Image src={driveway} alt="front driveway" class="image"/>
 					<div class="middle">
 						<div class="text">chalk pastel<br>gouache</div>
 					</div>
 				</div>	
 
 				<div class="container">
-					<Image src={pools} alt="philly litho print" class="image" height={382}/>
+					<Image src={pools} alt="philly litho print" class="image"/>
 					<div class="middle">
 						<div class="text">lithographic ink</div>
 					</div>
@@ -159,9 +192,9 @@ const pageTitle = "traditional art";
 			</div>
 
 
-			<div class="row">
+			<div class="row row-1">
 				<div class="container">
-					<Image src={hand} alt="hand" class="image" width={900}/>
+					<Image src={hand} alt="hand" class="image"/>
 					<div class="middle">
 						<div class="text">colored pencil<br>gouache</div>
 					</div>
@@ -169,16 +202,16 @@ const pageTitle = "traditional art";
 			</div>
 
 
-			<div class="row">
+			<div class="row row-2">
 				<div class="container">
-					<Image src={still} alt="still life" class="image" height={575}/>
+					<Image src={still} alt="still life" class="image"/>
 					<div class="middle">
 						<div class="text">chalk pastel</div>
 					</div>
 				</div>	
 
 				<div class="container">
-					<Image src={maine} alt="maine stamps" class="image" height={575}/>
+					<Image src={maine} alt="maine stamps" class="image"/>
 					<div class="middle">
 						<div class="text">lioncuts<br>acrylic</div>
 					</div>

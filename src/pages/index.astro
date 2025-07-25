@@ -8,7 +8,8 @@ import name from '../assets/home/name.png';
 const pageTitle = "anna rose hunt-isaak";
 ---
 
-<nav class = "vertical_home_navs">
+<nav class = "top_navs">
+	<a href="/">home</a>
 	<a href="/research/">research</a>
 	<a href="/traditional art/">traditional art</a>
 	<a href="/photography/">photography</a>
@@ -27,94 +28,150 @@ const pageTitle = "anna rose hunt-isaak";
 		<style>
 
 			/* NAVIGATION BUTTONS */
-			.vertical_home_navs {
+			.top_navs {
 				/* placing navigation buttons where desired */
-				position: absolute;
+				position: sticky;
+				top: 2rem;
 				display: flex;
-  				flex-direction: column; 
-				top: 30rem; 
-				left: 6rem;
+				flex-direction: row; 
+				justify-content: center;
+				margin-bottom: clamp(3rem, 6vw, 5rem);
+				z-index: 10;
 
-				/* font size and spacing between buttons and of the lettering */
-  				font-size: 12px;
+				/* spacing between buttons and of the lettering */
+				font-size: clamp(10px, 1.8vw, 12px);
+				gap: clamp(2rem, 4vw, 5rem);  
 				letter-spacing: 4.5px;   
-				gap: 3rem;  
 				
 				/* to prevent buttons from being underlined or changing color */
 				text-decoration: none;
 			}
 
-			.vertical_home_navs a{
+			.top_navs a{
 				text-decoration: none;
-				color: inherit;
+				color: rgb(175, 159, 148);
 			}
 
-
+			/* RESPONSIVE HOME LAYOUT */
 			body { 
 				margin: 0;
 				width: 100%;
 				max-width: none;
-				padding: 4rem 4rem;
+				padding: clamp(2rem, 4vw, 4rem);
+				padding-top: 8rem; /* Space for sticky nav */
 			}
 
-			.home_image {
-				position: absolute;
-				display: block;
-				top: 7rem;
-				left: 27rem;
-				right: auto; 
+			.content-grid {
+				display: grid;
+				grid-template-areas: 
+					"name image text";
+				grid-template-columns: auto 1fr auto;
+				column-gap: 4rem;
+				align-items: center;
+				max-width: 1400px;
+				margin: 0 auto;
 			}
 
 			.name_image {
+				grid-area: name;
+				justify-self: start;
 				display: block;
-				margin-top: 0.5rem;
-				margin-left: 0rem;
+				max-width: 250px;
+				height: auto;
+			}
+
+			.home_image {
+				grid-area: image;
+				justify-self: center;
+				align-self: center;
+				max-width: 100%;
+				height: auto;
 			}
 
 			.home_text {
+				grid-area: text;
 				line-height: 1.75;
-				width: 325px; 
-				position: absolute;
-				top: 7rem;  
-				left: 81.5rem;
-				right: 6rem;                                   
+				max-width: 325px; 
+				justify-self: start;
+				align-self: center;                          
+			}
+
+			/* Mobile responsive adjustments */
+			@media (max-width: 968px) {
+				body {
+					padding-top: 5rem;
+				}
+
+				.top_navs {
+					flex-wrap: wrap;
+					gap: clamp(1rem, 3vw, 2rem);
+					padding: 0 1rem;
+				}
+
+				.content-grid {
+					grid-template-areas: 
+						"name"
+						"image"
+						"text";
+					grid-template-columns: 1fr;
+					gap: 2rem;
+					text-align: center;
+				}
+
+				.name_image,
+				.home_image,
+				.home_text {
+					justify-self: center;
+				}
+
+				.home_text {
+					max-width: 100%;
+					text-align: left;
+					padding: 0 1rem;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.top_navs {
+					gap: 1rem;
+					font-size: 10px;
+					letter-spacing: 2px;
+				}
 			}
 
 		</style>
 	</head>
 
 	<body>
+		<div class="content-grid">
+			<Image
+				src = {name}
+				alt = "name logo"
+				class = "name_image"
+				quality={100}
+			/>
+			<Image
+				src = {homeImg}
+				alt = "me in Portland"
+				class = "home_image"
+				quality={100}
+			/>
 
-		<Image
-			src = {name}
-			alt = "name logo"
-			class = "name_image"
-			height = {230} 
-			quality={100}
-		/>
-		<Image
-			src = {homeImg}
-			alt = "me in Portland"
-			class = "home_image"
-			height = {600} 
-			quality={100}
-		/>
-
-		<div class = "home_text">
-			<p>
-				I'm an undergraduate student researcher and multi-media artist, approaching my final year at McGill University.  Pursuing 
-				my BASc in Cognitive Science, I focus primarily on neuroscience and computer science.
-			</p>
-			<p>
-				I'm interested in exploring the complex intersections of human cognition and behavior, technology, art, 
-				and design.  I hope to gain greater hands-on experience with the research and development of technologies
-				that foster close, reciprocal relationships with their biological users and to discover the roles that 
-				human-oriented design, aesthetics, and creative expression have to play in this world.
-			</p>
-			<p>
-				On the weekends, you can find me baking, reading, and rediscovering my love for oil painting!
-			</p>
+			<div class = "home_text">
+				<p>
+					I'm an undergraduate student researcher and multi-media artist, approaching my final year at McGill University.  Pursuing 
+					my BASc in Cognitive Science, I focus primarily on neuroscience and computer science.
+				</p>
+				<p>
+					I'm interested in exploring the complex intersections of human cognition and behavior, technology, art, 
+					and design.  I hope to gain greater hands-on experience with the research and development of technologies
+					that foster close, reciprocal relationships with their biological users and to discover the roles that 
+					human-oriented design, aesthetics, and creative expression have to play in this world.
+				</p>
+				<p>
+					On the weekends, you can find me baking, reading, and rediscovering my love for oil painting!
+				</p>
+			</div>
 		</div>
-
 	</body>
 </html>
