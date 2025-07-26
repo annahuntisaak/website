@@ -7,8 +7,10 @@ html {
 
 body {
     margin: 0 auto;
-    width: 100%;
+    width: 125ch;
+    /*
     max-width: 125ch;
+    */
     padding: 10rem 8rem;
     line-height: 1.75;
 

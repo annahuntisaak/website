@@ -29,9 +29,11 @@ const pageTitle = "anna rose hunt-isaak";
 
 		<style>
 
+			/*
 			body {
 				max-width: none;
 			}
+			*/
 
 			/* NAVIGATION BUTTONS */
 			.top_navs {
@@ -41,7 +43,7 @@ const pageTitle = "anna rose hunt-isaak";
 				flex-direction: row; 
 				flex-shrink: none;
 
-				margin-left: 16.5%;
+				/*margin-left: 16.5%;*/
 				top: 8%;
 
 				/* spacing between buttons and of the lettering */
@@ -59,12 +61,14 @@ const pageTitle = "anna rose hunt-isaak";
         	}
 
 			.home_container {
+				position: relative;
 				display: flex;
 				align-items: center;
-				width: 86%;
+				width: 100vw;
 
-				margin-top: 4%;
-				margin-left: 7%; 
+				left: 50%;
+				transform: translateX(-35%);
+				margin-top: 6%;
 				gap: 6%;   
 			}
 
@@ -76,6 +80,8 @@ const pageTitle = "anna rose hunt-isaak";
 			.home_text {
 				line-height: 1.75;
 				flex: 1;  
+				max-width: 45vw;
+				padding-right: 16%;
 			}		
 			
 			.name_image {
